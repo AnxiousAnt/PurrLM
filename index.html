@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purr-LM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Fine-Tuning an LLM on Purr-Data source code examples.</h1>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Fine-tuning Gemma 2b for Purr-Data: An Experiment</h2>
+            <p>Recently, I decided to experiment with fine-tuning Google's Gemma 2b instruct model to generate source code for Purr-Data patches.</p>
+            <p>Purr-Data, a visual programming language for creating multimedia applications, is amazing for its unique approach. But its niche use case means there's not a ton of data floating around online. This lack of data makes it a challenge for traditional machine learning models to understand.</p>
+        </section>
+
+        <section>
+            <h2>Building a Dataset for Purr-Data Patch Source code examples</h2>
+            <p>I created a dataset with the goal of evaluating the ability of large language models like Google's 2B GEMMA to be fine-tuned for Purr-Data source code generation.<br>It focuses specifically on patches that output a particular message when a "bang" object is clicked.</p>
+            <p><h3>Dataset Characteristics:</h3>
+                <strong>Content: Each data point consists of two parts:</strong>
+            <ul>
+                <li><strong>Instruction:</strong> A textual description of the desired Purr-Data patch functionality. This description focuses on the message the patch should output.<br> example instruction =><br> "can you make a Purr-Data patch that displays a funny message?
+                </li>
+                <li><strong>Response:</strong> The corresponding Purr-Data source code that fulfills the given instruction: <br>example response => <br>#N canvas 761 0 768 809 10;<br>#X obj 260 170 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000; <br>#X msg 334 25 What do you call a fish with no eyes? Fsh!; <br>#X obj 427 335 print; <br>#X connect 0 0 1 0; <br>#X connect 1 0 2 0;</li>
+            </ul></p>
+            <p><strong>Focus: </strong>The dataset is restricted to examples where the patch functionality centers around printing a specific message on a bang click.</p>
+
+            <p>link to the dataset: <a href='https://huggingface.co/datasets/ParZiVal04/Purr-Data_example_source_codes'>https://huggingface.co/datasets/ParZiVal04/Purr-Data_example_source_codes</a></p>
+            
+        </section>
+
+        <section>
+            <h2>Video Demo</h2>
+
+            <iframe width="996" height="560" src="https://www.youtube.com/embed/ZBqlYcnBN40" title="Fine-Tuning Gemma 2B on Purr-Data source code examples." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+            <p><br><a href="https://youtu.be/ZBqlYcnBN40">view on youtube if the player above doesn't work</a>
+            </p>
+        </section>
+
+        <section>
+            <h2>A Proof of Concept for Niche Languages</h2>
+            <p>This experiment showed that fine-tuning a large language model can be a viable approach for working with niche visual languages like Purr-Data. It's a small step, but one that paves the way for further exploration.</p>
+        </section>
+
+        <section>
+            <h2>The Future</h2>
+            <p>There's still a lot to explore. I'd love to expand the dataset to include more complex Purr-Data patches and see how the model performs. Ideally, some human programmers evaluating the quality of the code the model generates would be nice.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Amrut Kotrannavar</p>
+    </footer>
+</body>
+</html>
